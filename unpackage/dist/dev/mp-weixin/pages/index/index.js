@@ -87,7 +87,7 @@ const _sfc_defineComponent = /* @__PURE__ */ common_vendor.defineComponent({
       isShare.value = true;
       return {
         title: "为什么不问一问神奇海螺呢",
-        imageUrl: common_assets._imports_0,
+        imageUrl: common_assets._imports_4,
         success: function(res) {
           common_vendor.index.showToast({
             title: "分享成功"
@@ -116,7 +116,9 @@ const _sfc_defineComponent = /* @__PURE__ */ common_vendor.defineComponent({
     const login_code = common_vendor.ref("");
     const message = common_vendor.ref("");
     const loading = common_vendor.ref(false);
-    const messageList = common_vendor.reactive([]);
+    const messageList = common_vendor.reactive([
+      { from: "chatgpt", info: "hi,我是神奇海螺🐚你有什么问题想问我吗？" }
+    ]);
     const isShare = common_vendor.ref(false);
     const userInfo = async (id) => {
       db.collection("uni-id-log").get().then(async (res) => {
@@ -301,25 +303,29 @@ const _sfc_defineComponent = /* @__PURE__ */ common_vendor.defineComponent({
     };
     return (_ctx, _cache) => {
       return {
-        a: common_vendor.t(count.value),
-        b: common_vendor.t(sharecount.value),
-        c: common_vendor.o(shareAddSubtract),
-        d: common_vendor.o(showEncourageAd),
-        e: common_vendor.f(messageList, (item, k0, i0) => {
+        a: common_assets._imports_0,
+        b: common_assets._imports_1,
+        c: common_assets._imports_2,
+        d: common_assets._imports_3,
+        e: common_vendor.t(count.value),
+        f: common_vendor.t(sharecount.value),
+        g: common_vendor.o(shareAddSubtract),
+        h: common_vendor.o(showEncourageAd),
+        i: common_vendor.f(messageList, (item, k0, i0) => {
           return common_vendor.e({
             a: item.from === "chatgpt"
           }, item.from === "chatgpt" ? {
-            b: common_assets._imports_0
+            b: common_assets._imports_4
           } : {}, {
             c: common_vendor.t(item.info),
             d: item.from === "chatgpt" ? 1 : "",
             e: item.from === "my" ? 1 : ""
           });
         }),
-        f: message.value,
-        g: common_vendor.o(($event) => message.value = $event.detail.value),
-        h: common_vendor.o(sendMessage),
-        i: loading.value
+        j: message.value,
+        k: common_vendor.o(($event) => message.value = $event.detail.value),
+        l: common_vendor.o(sendMessage),
+        m: loading.value
       };
     };
   }

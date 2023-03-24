@@ -5,8 +5,8 @@ page {
 .title {
   margin-bottom: auto;
   text-align: center;
-  font-size: 40px;
-  color: pink;
+  font-size: 35px;
+  color: #fff;
 }
 .share {
   height: 32px;
@@ -140,7 +140,29 @@ page {
   display: flex;
   justify-content: space-between;
 }
+.sharebutton button {
+  margin: 0px;
+}
 .share {
   display: flex;
   justify-content: space-between;
+}
+.sharecontent {
+  height: 60px;
+  background-color: #eef2fe;
+  border-radius: 20px;
+  padding: 10px;
+  color: #4c85f2;
+}
+.imghmpdxbox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.hmbb,
+.pdx,
+.zyg,
+.xlb {
+  height: 50px;
+  width: 40px;
 }

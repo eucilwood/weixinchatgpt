@@ -3,21 +3,30 @@
 		<!-- <ad-interstitial adpid="adunit-01a2e69817c90316"></ad-interstitial> -->
 		<!-- <ad adpid="adunit-01a2e69817c90316"></ad> -->
 		<view class="topbox">
-			<view class="title">
+		<!-- 	<view class="title">
 				神奇海螺
+			</view> -->
+			<view class="imghmpdxbox">
+				<img src="@/static/hm3.png" alt="" srcset="" class="hmbb">
+					<img src="@/static/pdx.png" alt="" srcset="" class="pdx">
+						<img src="@/static/xlb.png" alt="" srcset="" class="xlb">
+						<img src="@/static/zyg.png" alt="" srcset="" class="zyg">
 			</view>
-			<view class="useSum">
-				每日使用次数:{{count}}
-			</view>
-			<view class="share">
-				<view class="text">
-					每日分享增加使用次数({{sharecount}}/5)
+			<view class="sharecontent">
+				<view class="useSum">
+					每日使用次数:{{count}}
 				</view>
-				<view class="sharebutton">
-					<button @click="shareAddSubtract" open-type="share" class="sharebox">分享</button>
-					<button @click="showEncourageAd" class="sharebox">观看广告</button>
+				<view class="share">
+					<view class="text">
+						每日分享次数({{sharecount}}/5)
+					</view>
+					<view class="sharebutton">
+						<button @click="shareAddSubtract" open-type="share" class="sharebox" style="margin-left: auto;margin-right: 5px;">分享</button>
+						<button @click="showEncourageAd" class="sharebox">观看广告</button>
+					</view>
 				</view>
 			</view>
+
 
 			<!-- 申请商户中..... -->
 			<!-- 		<view class="pay">
@@ -207,7 +216,9 @@
 	// 发送按钮loading
 	const loading = ref(false)
 	// 聊天列表
-	const messageList = reactive([])
+	const messageList = reactive([
+		{from:'chatgpt',info:'hi,我是神奇海螺🐚你有什么问题想问我吗？'}
+	])
 	// 配合onshow判断是否进入分享界面
 	const isShare = ref(false)
 	interface userinfo {
@@ -420,8 +431,8 @@
 	.title {
 		margin-bottom: auto;
 		text-align: center;
-		font-size: 40px;
-		color: pink;
+		font-size: 35px;
+		color: #fff;
 	}
 
 	.share {
@@ -575,10 +586,33 @@
 		flex: 1;
 		display: flex;
 		justify-content: space-between;
+		button{
+			margin: 0px;
+		}
 	}
 
 	.share {
 		display: flex;
 		justify-content: space-between;
 	}
+	.sharecontent{
+		height: 60px;
+		    background-color: #eef2fe;
+			border-radius: 20px;
+			padding: 10px;
+			color: #4c85f2;
+	}
+	.imghmpdxbox{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	.hmbb, .pdx, .zyg, .xlb{
+		height: 50px;
+		width: 40px;
+	}
+	// .pdx{
+	// 	height: 40px;
+	// 	width: 40px;
+	// }
 </style>
