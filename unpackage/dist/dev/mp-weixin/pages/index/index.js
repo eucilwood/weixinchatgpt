@@ -310,8 +310,9 @@ const _sfc_defineComponent = /* @__PURE__ */ common_vendor.defineComponent({
         e: common_vendor.t(count.value),
         f: common_vendor.t(sharecount.value),
         g: common_vendor.o(shareAddSubtract),
-        h: common_vendor.o(showEncourageAd),
-        i: common_vendor.f(messageList, (item, k0, i0) => {
+        h: sharecount.value === 0,
+        i: common_vendor.o(showEncourageAd),
+        j: common_vendor.f(messageList, (item, k0, i0) => {
           return common_vendor.e({
             a: item.from === "chatgpt"
           }, item.from === "chatgpt" ? {
@@ -322,10 +323,10 @@ const _sfc_defineComponent = /* @__PURE__ */ common_vendor.defineComponent({
             e: item.from === "my" ? 1 : ""
           });
         }),
-        j: message.value,
-        k: common_vendor.o(($event) => message.value = $event.detail.value),
-        l: common_vendor.o(sendMessage),
-        m: loading.value
+        k: message.value,
+        l: common_vendor.o(($event) => message.value = $event.detail.value),
+        m: common_vendor.o(sendMessage),
+        n: loading.value
       };
     };
   }

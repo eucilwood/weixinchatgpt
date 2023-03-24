@@ -14,14 +14,14 @@
 			</view>
 			<view class="sharecontent">
 				<view class="useSum">
-					每日使用次数:{{count}}
+					使用次数:{{count}}(每天有5次使用次数哦!)
 				</view>
 				<view class="share">
 					<view class="text">
 						每日分享次数({{sharecount}}/5)
 					</view>
 					<view class="sharebutton">
-						<button @click="shareAddSubtract" open-type="share" class="sharebox" style="margin-left: auto;margin-right: 5px;">分享</button>
+						<button @click="shareAddSubtract" open-type="share" class="sharebox" style="margin-left: auto;margin-right: 5px;" :disabled="sharecount===0">分享</button>
 						<button @click="showEncourageAd" class="sharebox">观看广告</button>
 					</view>
 				</view>
